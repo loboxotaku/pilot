@@ -1,0 +1,19 @@
+# Pilot Configuration Example
+# Copy this to ~/.pilot/config.yaml and customize as needed
+
+# Default tenant for job submissions
+default_tenant: "cns"
+
+# Service endpoints
+services:
+  work: "http://localhost:4000"
+  registry: "http://localhost:4001"
+
+# Output format (table, json, yaml)
+output_format: table
+
+# HTTP request timeout in milliseconds
+http_timeout: 30000
+
+# REPL history size
+repl_history_size: 100

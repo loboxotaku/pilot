@@ -1,0 +1,132 @@
+#compdef pilot
+
+_pilot() {
+    local -a commands
+    commands=(
+        'jobs:Manage jobs'
+        'experiments:Run and manage experiments'
+        'services:Manage services'
+        'datasets:Manage datasets'
+        'metrics:Query metrics'
+        'registry:Service registry operations'
+        'embed:Generate text embeddings'
+        '--help:Show help'
+        '--version:Show version'
+        '--repl:Start interactive REPL'
+    )
+
+    local -a jobs_cmds
+    jobs_cmds=(
+        'list:List jobs'
+        'submit:Submit a job'
+        'status:Get job status'
+        'cancel:Cancel a job'
+    )
+
+    local -a experiments_cmds
+    experiments_cmds=(
+        'run:Run an experiment'
+        'status:Get experiment status'
+        'compare:Compare two experiments'
+    )
+
+    local -a services_cmds
+    services_cmds=(
+        'list:List services'
+        'health:Check service health'
+        'logs:View service logs'
+    )
+
+    local -a datasets_cmds
+    datasets_cmds=(
+        'list:List available datasets'
+        'info:Get dataset info'
+        'download:Download a dataset'
+    )
+
+    local -a metrics_cmds
+    metrics_cmds=(
+        'query:Query metrics'
+        'dashboard:Launch metrics dashboard'
+    )
+
+    local -a registry_cmds
+    registry_cmds=(
+        'list:List all registered services'
+        'health:Check health of all registered services'
+    )
+
+    local -a agents
+    agents=(
+        'proposer:CNS Proposer agent'
+        'antagonist:CNS Antagonist agent'
+        'synthesizer:CNS Synthesizer agent'
+    )
+
+    local -a datasets
+    datasets=(
+        'scifact:SciFact dataset'
+        'fever:FEVER dataset'
+        'gsm8k:GSM8K dataset'
+        'humaneval:HumanEval dataset'
+    )
+
+    local -a formats
+    formats=(
+        'table:Human-readable table format'
+        'json:Machine-readable JSON'
+        'yaml:YAML format'
+    )
+
+    if (( CURRENT == 2 )); then
+        _describe 'command' commands
+    elif (( CURRENT == 3 )); then
+        case "$words[2]" in
+            jobs)
+                _describe 'jobs command' jobs_cmds
+                ;;
+            experiments)
+                _describe 'experiments command' experiments_cmds
+                ;;
+            services)
+                _describe 'services command' services_cmds
+                ;;
+            datasets)
+                _describe 'datasets command' datasets_cmds
+                ;;
+            metrics)
+                _describe 'metrics command' metrics_cmds
+                ;;
+            registry)
+                _describe 'registry command' registry_cmds
+                ;;
+        esac
+    elif (( CURRENT == 4 )); then
+        case "$words[2]" in
+            experiments)
+                if [[ "$words[3]" == "run" ]]; then
+                    _describe 'agent' agents
+                fi
+                ;;
+            datasets)
+                if [[ "$words[3]" == "info" || "$words[3]" == "download" ]]; then
+                    _describe 'dataset' datasets
+                fi
+                ;;
+        esac
+    fi
+
+    _arguments \
+        '--format[Output format]:format:->formats' \
+        '--help[Show help]' \
+        '--version[Show version]' \
+        '--repl[Start interactive REPL]'
+
+    case "$state" in
+        formats)
+            _describe 'format' formats
+            ;;
+    esac
+}
+
+_pilot "$@"
