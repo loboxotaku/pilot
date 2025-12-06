@@ -44,9 +44,10 @@ defmodule Pilot.Output do
 
     table_options = Keyword.new(TableRex.Renderer.Text.default_options())
 
-    TableRex.Table.new(rows, header_strings)
-    |> TableRex.Table.render!(table_options)
-    |> IO.puts()
+    table = TableRex.Table.new(rows, header_strings)
+
+    {:ok, rendered} = TableRex.Renderer.Text.render(table, table_options)
+    IO.puts(rendered)
 
     0
   end
@@ -54,11 +55,13 @@ defmodule Pilot.Output do
   def print_table(data, _opts) when is_map(data) do
     table_options = Keyword.new(TableRex.Renderer.Text.default_options())
 
-    data
-    |> Enum.map(fn {k, v} -> [to_string(k), inspect(v)] end)
-    |> TableRex.Table.new(["Key", "Value"])
-    |> TableRex.Table.render!(table_options)
-    |> IO.puts()
+    {:ok, rendered} =
+      data
+      |> Enum.map(fn {k, v} -> [to_string(k), inspect(v)] end)
+      |> TableRex.Table.new(["Key", "Value"])
+      |> TableRex.Renderer.Text.render(table_options)
+
+    IO.puts(rendered)
 
     0
   end
