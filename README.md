@@ -1,6 +1,22 @@
-# Pilot
+<p align="center">
+  <img src="assets/pilot.svg" alt="NSAI Pilot" width="200">
+</p>
 
-**Interactive CLI/REPL for the NSAI Ecosystem**
+<h1 align="center">NSAI Pilot</h1>
+
+<p align="center">
+  <a href="https://github.com/North-Shore-AI/pilot/actions"><img src="https://github.com/North-Shore-AI/pilot/workflows/CI/badge.svg" alt="CI Status"></a>
+  <a href="https://hex.pm/packages/pilot"><img src="https://img.shields.io/hexpm/v/pilot.svg" alt="Hex.pm"></a>
+  <a href="https://hexdocs.pm/pilot"><img src="https://img.shields.io/badge/docs-hexdocs-blue.svg" alt="Documentation"></a>
+  <img src="https://img.shields.io/badge/elixir-%3E%3D%201.14-purple.svg" alt="Elixir">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-green.svg" alt="License"></a>
+</p>
+
+<p align="center">
+  Interactive CLI and REPL for the NSAI ecosystem
+</p>
+
+---
 
 Pilot provides a unified command-line interface for interacting with North Shore AI's ecosystem of services, including job management, experiment running, service monitoring, dataset operations, and metrics querying.
 
