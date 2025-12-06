@@ -202,6 +202,6 @@ defmodule Pilot.REPL do
   end
 
   defp version do
-    Mix.Project.config()[:version]
+    Application.spec(:pilot, :vsn) |> to_string()
   end
 end

@@ -69,9 +69,6 @@ defmodule Pilot.Commands.Metrics do
 
       {:win32, _} ->
         System.cmd("cmd", ["/c", "start", url])
-
-      _ ->
-        Output.info("Please open the URL manually: #{url}")
     end
   end
 end

@@ -517,6 +517,4 @@ defmodule Pilot.CLI do
     |> Map.merge(result.args)
     |> Map.merge(result.flags)
   end
-
-  defp parse_result_to_map(opts), do: opts
 end
