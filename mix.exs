@@ -1,16 +1,25 @@
 defmodule Pilot.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+  @source_url "https://github.com/North-Shore-AI/pilot"
+
+  def version, do: @version
+
   def project do
     [
       app: :pilot,
-      version: "0.1.0",
+      version: @version,
       elixir: "~> 1.18",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       escript: escript(),
-      description: "Interactive CLI/REPL for the NSAI ecosystem",
-      package: package()
+      description: description(),
+      package: package(),
+      name: "Pilot",
+      source_url: @source_url,
+      homepage_url: @source_url,
+      docs: docs()
     ]
   end
 
@@ -54,10 +63,29 @@ defmodule Pilot.MixProject do
     ]
   end
 
+  defp description do
+    """
+    Interactive CLI/REPL for the NSAI ecosystem: unified interface for Crucible experiments, CNS dialectical synthesis, and ML reliability research.
+    """
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      source_ref: "v#{@version}",
+      source_url: @source_url,
+      assets: %{"assets" => "assets"},
+      logo: "assets/pilot.svg",
+      extras: ["README.md", "LICENSE"]
+    ]
+  end
+
   defp package do
     [
+      name: "pilot",
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/North-Shore-AI/pilot"}
+      links: %{"GitHub" => @source_url},
+      files: ~w(lib mix.exs README.md LICENSE assets)
     ]
   end
 end
